@@ -1,0 +1,37 @@
+html, body{
+    margin: 0;
+    padding: 0;
+    font-family: 'Arial', sans-serif;
+    color: var(--color-white);
+    background-color: var(--color-xam);
+    font-size: 65.2%;
+}
+ul{
+    margin: 0;
+    padding: 0;
+    list-style: none;
+    display: flex;
+    gap: 15px; 
+    white-space: nowrap;
+    color: var(--color-white);
+
+} 
+
+a{
+    text-decoration: none;
+    color: var(--color-white)
+}
+p{
+    margin: 0;
+    padding: 0;
+}
+
+
+
+
+:root{
+    --background-color: rgba(0, 0, 0, 0.215);
+    --color-white: #fff;
+    --color-xam: #333;
+    --fontSize: 1.5rem;
+}

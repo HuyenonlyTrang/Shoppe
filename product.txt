@@ -1,0 +1,37 @@
+[id 
+image 
+image_one
+image_two
+image_three
+image_four
+image_fire
+name 
+old_price 
+new_price (old_price 
+ - (sale-price/10)) --> bien thang doi thang new_price --> conhang
+sale_price
+sold_quantity 
+review
+star 
+loaisanpham
+noi
+mota 
+
+phan loai : loai tensp... -> tao bang 
+reduce [10%, 20%, 30%]] --> tao bang
+
+
+-----
+tao bang store 
+  - name 
+  - review : float
+  - product : int
+  - ratio_feedback : float
+  - time_feedback :varchar
+  - join: int
+  - follower:int
+  - avatar 
+  
+
+
+

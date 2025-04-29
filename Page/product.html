@@ -1,0 +1,178 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/normalize/8.0.1/normalize.min.css" integrity="sha512-NhSC1YmyruXifcj/KFRWoC561YpHpc5Jtzgvbuzx5VozKpWvQ+4nXhPdFgmx8xqexRcpAglTj9sIBWINXa8x5w==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="../Base/Css/main.css" class="">
+    <link rel="stylesheet" href="../Base/Css/base.css">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.5/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-SgOJa3DmI69IUzQ2PVdRZhwQ+dy64/BUtbMJw1MZ8t5HZApcHrRKUc4W0kG879m7" crossorigin="anonymous">
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.5/dist/js/bootstrap.bundle.min.js" integrity="sha384-k6d4wzSIapyDyv1kpU366/PK5hCdSbCRGRCMv+eplOQJWyd1fbcAu9OCUj5zNLiq" crossorigin="anonymous"></script>
+    
+</head>
+<body>
+    <script>
+        fetch('./Layout_header.html')
+        .then(res => res.text())
+        .then(html => {
+          const container = document.createElement('div');
+          container.innerHTML = html;
+        
+          // Chèn HTML vào đầu body
+          document.body.insertBefore(container, document.body.firstChild);
+        
+          // Tìm và thực thi các script trong phần vừa chèn
+          const scripts = container.querySelectorAll('script');
+          scripts.forEach(oldScript => {
+            const newScript = document.createElement('script');
+            if (oldScript.src) {
+              newScript.src = oldScript.src;
+            } else {
+              newScript.textContent = oldScript.textContent;
+            }
+            document.body.appendChild(newScript);
+          });
+        })
+        .catch(err => {
+          console.error('Lỗi khi load Layout_header.html:', err);
+        });
+    </script>
+    <div class="container" style="margin-top: 200px;">
+        <div class="product_heared">
+          <span class="text-primary">Shopee</span> 
+          <i class="fa-solid fa-angle-right"></i>
+          <span class="product_danhmuc text-primary"></span>
+          <i class="fa-solid fa-angle-right"></i>
+          <span class="prduct_sp"></span>
+        </div>
+      <div class="product_product">
+         <div class="product_box_img">
+            <img src="" alt="" class="box_img_one">
+            <div class="list_img">
+              <button class="btn_left"><i class="fa-solid fa-angle-left"></i></button>
+              <nav class="list_img_nav">
+                <ul class="list_img_ul row"></ul>
+              </nav>
+              <button class="btn_right"><i class="fa-solid fa-angle-right"></i></button>
+            </div>
+         </div>
+         <div class="product_box_title d-flex flex-column gap-3">
+            <p class="fs-2 title_header lh-1"></p>
+            <div class="d-flex justify-content-between align-items-center">
+               <div class="d-flex gap-5 mt-2">
+                 <div class="liststart d-flex align-items-center">
+                    <span class="star text-decoration-underline"></span>
+                 </div>
+                 <span class="review text-decoration-underline"></span>
+                 <span class="sold text-decoration-underline"></span>
+               </div>
+              <span class="text-decoration-underline text-secondary">Tố cáo</span>
+            </div>
+            <div class="box_money d-flex align-items-center gap-2">
+              <span class="newPrice fs-1"></span>
+              <span class="oldPrice text-decoration-line-through fs-4 text-secondary"></span>
+              <span class="salePrice fs-5"></span>
+            </div>
+            <div class="d-flex align-items-start  gap-5 mt-5">
+                <p class="text-secondary w-25">Vận chuyển</p>
+              <div class="w-75">
+                <div class="date"></div>
+              </div>
+            </div>
+            <div class="d-flex align-items-center  gap-5 mt-5">
+              <p class="text-secondary w-25">An tâm mua sắm cùng Shopee</p>
+              <div class="w-75 box_one_one">
+                 Trả hàng miễn phí 15 ngày <i class="fa-solid fa-circle" style="transform: scale(0.1)"></i> <span>Bảo hiểm thời trang <i class="fa-solid fa-angle-down fs-5"></i></span>
+                 <div class="d-flex flex-column gap-2 box_two_two">
+                   <p class="fw-bold">An tâm mua sắm cùng shopee</p>
+                   <div class="d-flex gap-5 align-items-start">
+                      <p><i class="fa-solid fa-cart-shopping"></i></p>
+                      <div>
+                        <p class="">Trả hàng miễn phí 15 ngày</p>
+                        <p class="fs-5 text-secondary">Miễn phí Trả hàng trong 15 ngày để đảm bảo bạn hoàn toàn có thể yên tâm khi mua hàng ở Shopee.
+                          Ngoài ra, tại thời điểm nhận hàng, bạn có thể đồng kiểm và được trả hàng miễn phí.</p>
+                      </div>
+                   </div>
+                   <a href="#" class="d-flex gap-5 align-items-start">
+                    <p><i class="fa-solid fa-circle-exclamation"></i></p>
+                    <div class="d-flex align-items-center justify-content-between  w-100"> 
+                      <div>
+                        <p class="">Bảo hiểm thời trang</p>
+                        <p class="fs-5 text-secondary">Tìm hiểu thêm</p>
+                      </div>
+                      <p><i class="fa-solid fa-angle-right "></i></p>
+                    </div>
+                 </a>
+                 </div>
+              </div>
+            </div>
+            <div class="d-flex align-items-center position-relative gap-5 mt-5">
+               <p class="text-secondary w-25 box_phanloai"></p>
+               <div class="w-75 texttext d-flex gap-5"></div>
+               <span class="tick">Hãy bấm chọn</span>
+            </div>
+            <div class="d-flex align-items-center  gap-5 mt-5">
+              <p class="text-secondary w-25">Size</p>
+              <div class="w-75 textsize d-flex gap-5"></div>
+            </div>
+            <div class="d-flex align-items-center gap-5 mt-5">
+              <p class="text-secondary w-25">Số Lượng</p>
+              <div class="w-75 d-flex gap-5">
+                <span class="minus"><i class="fa-solid fa-minus"></i></span>
+                <span class="sum"></span>
+                <span class="push"><i class="fa-solid fa-plus"></i></span>
+                <span class="soluong"></span>
+              </div>
+            </div>
+            <div class="d-flex align-items-center gap-5 mt-5">
+              <div class="w-30 p-4 fs-3 cart" id="PayLoad" >
+                <i class="fa-solid fa-cart-shopping"></i>
+                <span>Thêm vào giỏ hàng</span>
+              </div>
+              <div class="w-30 p-4 fs-3 pay cartlist" id="PayLoad">
+                   Mua ngay
+              </div>
+            </div>
+         </div>
+      </div>
+      <div class="store d-flex align-items-center gap-5">
+        <div class="store_avatar"></div>
+        <div class="store_nom d-flex flex-column gap-2" style="min-width: 200px;"></div>
+        <div class="store_title row "></div>
+      </div>
+      <div class="Product_Details d-flex flex-column align-items-start gap-5">
+        <h2>Chi Tiết Sản Phẩm</h2>
+        <div class="d-flex align-items-center gap-5 col-4">
+          <span class="text-secondary fs-4">Danh Mục</span>
+          <div class="product_heared">
+            <span class="text-white">Shopee</span> 
+            <i class="fa-solid fa-angle-right fs-5"></i>
+            <span class="text_product text-white fs-5"></span>
+          </div>
+        </div>
+        <div class="d-flex align-items-center gap-5 col-4">
+          <span class="text-secondary fs-4">Xuất Xứ</span>
+          <span class="text-white text_where fs-5"></span>
+        </div>
+        <div class="d-flex align-items-center gap-5 col-4">
+          <span class="text-secondary fs-4">Kho</span>
+          <span class="text-white text_kho fs-5"></span>
+        </div>
+      </div>
+      <div class="Product_Details d-flex flex-column align-items-start gap-5">
+        <h2>Mô tả Sản Phẩm</h2>
+        <p class="mota fs-4"></p>
+      </div>
+      <div class="d-flex flex-column align-items-start gap-5">
+        <h2>Các Sản Phẩm Của Shope Khác</h2>
+        <ul class="Box_Products row">
+          
+        </ul>
+      </div>
+    </div>
+    </div>
+    <script src="../Base/JS/product.js"></script>
+</body>
+</html>

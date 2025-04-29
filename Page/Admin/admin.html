@@ -1,0 +1,176 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+  <meta charset="UTF-8">
+  <title>Quản lý User & Sản phẩm</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      padding: 20px;
+    }
+    h2 {
+      color: #2c3e50;
+    }
+    input, button {
+      margin: 5px 0;
+      padding: 6px;
+    }
+    .section {
+      margin-bottom: 40px;
+    }
+    img {
+      width: 100px;
+      margin: 5px;
+    }
+  </style>
+</head>
+<body>
+  <div class="section">
+    <h2>Thêm User</h2>
+    <input type="text" id="userName" placeholder="Tên"><br>
+    <input type="text" id="userPhone" placeholder="Số điện thoại"><br>
+    <input type="email" id="userEmail" placeholder="Email"><br>
+    <input type="number" id="userBirthYear" placeholder="Năm sinh"><br>
+    <button id="btnSaveUser">Gửi User</button>
+    <h3>Danh sách Users</h3>
+    <div id="userList"></div>
+  </div>
+
+  <div class="section">
+    <h2>Thêm Sản phẩm</h2>
+    <input type="text" placeholder="href" id="href_product"> 
+    <input type="text" id="productName" placeholder="Tên sản phẩm"><br>
+    <input type="number" id="oldPrice" placeholder="Giá cũ"><br>
+    <input type="number" id="newPrice" placeholder="còn hàng"><br>
+    <input type="number" id="salePrice" placeholder="Giá khuyến mãi"><br>
+    <input type="number" id="soldQuantity" placeholder="Số lượng bán"><br>
+    <input type="checkbox"  id="check_like">
+    <input type="file" id="productImage" placeholder="image"><br>
+    <input type="file" id="productImageOne" placeholder="image_one">
+    <input type="file" id="productImageTwo" placeholder="image_two">
+    <input type="file" id="productImageThree" placeholder="image_three">
+    <input type="file" id="productImageFour" placeholder="image_four">
+    <input type="file" id="productImageFire" placeholder="image_fire">
+    <input type="number" id="star" placeholder="star">
+    <input type="number" id="review" placeholder="review">
+    <input type="text" id="where" placeholder="where">
+    <input type="text" id="mota" placeholder="mota">
+    <input type="text" id="name_store" placeholder="name_store">
+    <input type="text" id="loaisanpham" placeholder="loaisanpham">
+    <button id="btnSaveProduct">Gửi Sản phẩm</button>
+    <h3>Danh sách Sản phẩm</h3>
+    <div id="productList"></div>
+  </div>
+  <div>
+    <h2>Danh Mục</h2>
+    <input type="text" id="phanloai" placeholder="Phan Loai">
+    <button id="btnSaveDanhMuc">Gửi Sản phẩm</button>
+    <h3>Danh sách </h3>
+    <div id="danhmuc"></div>
+  </div>
+  <div>
+    <h2>Size</h2>
+    <p>size_s</p>
+    <input type="checkbox" id="size_s" >
+    <p>size_m</p>
+    <input type="checkbox" id="size_m" >
+    <p>size_l</p>
+    <input type="checkbox" id="size_l" >
+    <p>size_xl</p>
+    <input type="checkbox" id="size_xl" >
+    <p>size_xl</p>
+    <input type="checkbox" id="size_xl" >
+    <p>size_xxl</p>
+    <input type="checkbox" id="size_xxl" >
+    <p>size_xxxl</p>
+    <input type="checkbox" id="size_xxxl" >
+    <button id="btnSaveSize">Gửi Sản phẩm</button>
+      <h3>Danh sách</h3>
+      <div id="size"></div>
+  </div>
+
+  <div>
+     <h2>Phan Loai</h2>
+     <input type="text" id="phanloaii" placeholder="loai">
+     <input type="text" id="tensp_one" placeholder="tensp_one">
+     <input type="text" id="tensp_two" placeholder="tensp_two">
+     <input type="text" id="tensp_three" placeholder="tensp_three">
+     <input type="text" id="tensp_four" placeholder="tensp_four">
+     <button id="btnSavePhanLoai">Gửi Sản phẩm</button>
+     <h3>Danh sách</h3>
+     <div id="Phanloai"></div>
+  </div>
+  <div>
+    <h2>Ma Giam Gia</h2>
+    <input type="number" id="reduce_one" placeholder="reduce_one">
+    <input type="number" id="reduce_two" placeholder="reduce_two">
+    <input type="number" id="reduce_three" placeholder="reduce_three">
+    <input type="number" id="reduce_four" placeholder="reduce_four">
+    <input type="number" id="reduce_fire" placeholder="reduce_fire">
+    <button id="btnSaveReduce">Gửi Sản phẩm</button>
+    <h3>Danh sách</h3>
+    <div id="Reduce"></div>
+ </div>
+
+  <div class="section">
+    <h2>Thêm LinkTwo</h2>
+    <input type="file" id="litImage"><br>
+    <input type="text" id="liTitle" placeholder="Tên title"><br>
+    <input type="text" id="liHref" placeholder="href"><br>
+    <button id="btnSaveLinkTwo">Gửi Sản phẩm</button>
+    <h3>Danh sách Sản phẩm</h3>
+    <div id="liListLinkTwo"></div>
+  </div>
+
+  <div class="section">
+    <h2>Thêm LinkThree</h2>
+    <input type="file" id="litImage_one" name="image_one" /> <!-- Đảm bảo tên trường là image_one -->
+    <input type="file" id="litImage_two" name="image_two" /> <!-- Đảm bảo tên trường là image_two -->
+    <input type="text" id="liTitle_one" placeholder="Tên title"><br>
+    <input type="text" id="liHref_one" placeholder="href"><br>
+    <button id="btnSaveLinkThree">Gửi Sản phẩm</button>
+    <h3>Danh sách Sản phẩm</h3>
+    <div id="liListLinkThree"></div>
+  </div>
+
+  <div class="section">
+    <h2>Thêm SearchTop</h2>
+    <input type="file" id="ImageSearchTop"  /> <!-- Đảm bảo tên trường là image_one -->
+    <input type="number" id="soluong" placeholder="soluong"><br>
+    <input type="text" id="title_searchTop" placeholder="title_searchTop">
+    <input type="text" id="title_href" placeholder="href"><br>
+    <button id="btnSaveSearchTop">Lưu</button>
+    <h3>Danh sách Sản phẩm</h3>
+    <div id="searchTopDisplay"></div>
+  </div>
+  
+  <div class="section">
+    <h2>Thêm fashsale</h2>
+    <input type="file" id="ImageFalse"  /> <!-- Đảm bảo tên trường là image_one -->
+    <input type="number" id="price" placeholder="price"><br>
+    <input type="number" id="sale" placeholder="sale"><br>
+    <input type="text" id="title_fashsale" placeholder="title_fashsale">
+    <input type="text" id="sale_href" placeholder="href"><br>
+    <button id="btnSaveFashSale">Gửi Sản phẩm</button>
+    <h3>Danh sách Sản phẩm</h3>
+    <div id="liListFashSale"></div>
+  </div>
+
+  <div class="section">
+    <h2>Thêm fashsale</h2>
+    <input type="file" id="ImageStore"  /> <!-- Đảm bảo tên trường là image_one -->
+    <input type="number" id="reivewStore" placeholder="reivewStore"><br>
+    <input type="number" id="ProductStore" placeholder="ProductStore"><br>
+    <input type="number" id="Radio_feedback" pdaceholder="Radio_feedback">
+    <input type="text" id="Time_feedback" placeholder="Time_feedback"><br>
+    <input type="number" id="join" placeholder="join"><br>
+    <input type="number" id="follower" placeholder="follower"><br>
+    <input type="text" id="nameStore" placeholder="nameStore"><br>
+    <button id="btnSaveStore">Gửi Sản phẩm</button>
+    <h3>Danh sách Sản phẩm</h3>
+    <div id="Store"></div>
+  </div>
+
+  <script type="module" src="./main.js"></script>
+</body>
+</html>

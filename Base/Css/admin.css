@@ -1,0 +1,138 @@
+.wrapper{
+    background-image: url('/Image/anhnen.jpg');
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+.content_bottom{
+}
+.hearder_title{
+    box-shadow: 0 0 2px blueviolet;
+    backdrop-filter: blur(2px);
+}
+.hearder_title > h1 {
+    font-weight: 800;
+    padding: 10px 0;
+    color:rgb(201, 201, 205);
+    text-shadow: 2px 2px 5px rgba(0, 0, 0, 0.7);
+}
+
+
+.menu_left, .manage{
+    position: relative;
+    backdrop-filter: blur(2px); 
+}
+
+
+.content_right{
+    width: calc(100% - 200px);
+    text-align: center;
+}
+.content_right > div{
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+}
+.menu_left{
+    width: 45px;
+    animation: up 1s linear forwards;
+}
+@keyframes up {
+     0%{
+        width: 45px;
+        opacity: 0;
+     }
+     100%{
+        width: 200px;
+        opacity: 1;
+     }
+}
+
+.menu_nav, .content_right{
+    height: 700px;
+    overflow-y: auto;
+    -ms-overflow-style: none;  /* IE & Edge */
+    scrollbar-width: none;     /* Firefox */
+}
+.menu_nav {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+}
+.menu_nav > li > a{
+    display: block;
+    text-decoration: none;
+    padding: 30px 0;
+    font-weight: 600;
+    font-size: 1.2rem;
+    color: white;
+    white-space: nowrap;
+    text-shadow: 2px 2px 5px rgba(0, 0, 0, 0.7);
+}
+.menu_nav > li > a:hover, .manage > li > a:hover{
+    transform: translateX(10px);
+    border-bottom: 2px solid white ;
+    transition: all 0.5s linear;
+}
+.icon{
+    margin: 0 20px ;
+}
+
+.account {
+}
+.account:hover .manage{
+    display: block !important;
+}
+.manage {
+    position: absolute;
+    width: 150% !important;
+    bottom: 0;
+    left: 100%;
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    display: none;
+    z-index: 99;
+}
+.manage > li > a {
+    display: block;
+    color:rgb(9, 9, 10);
+    font-weight: 600;
+    text-decoration: none;
+    padding: 11px 20px;
+    text-shadow: 2px 2px 5px rgba(0, 0, 0, 0.7);
+
+}
+
+input:focus {
+    outline: none;
+    border: none; /* Nếu bạn muốn không có border luôn */
+    box-shadow: none; /* Nếu trình duyệt dùng shadow làm viền */
+  }
+input[type="text"] , input[type="file"], input[type="number"],input[type="email"], input[type="password"]{
+    border: none;
+    padding: 10px;
+    background-color: rgba(255, 255, 255, 0.24);
+    color: white;
+    font-weight: 700;
+}
+input[type="file"]{
+    width: 115px;
+    margin-right: 10px;
+}
+.section{
+    width: 70%;
+    color: white;
+    display: flex;
+    flex-direction: column;
+}
+.section h2{
+    text-shadow: 2px 2px 5px rgba(0, 0, 0, 0.7);
+}
+.section > button{
+    border: none;
+    padding: 10px;
+}
+
+label{
+   text-align: left;
+}
