@@ -659,6 +659,7 @@
 }
 .cart , .pay{
     background-color: #c145264e;
+    cursor: pointer;
 }
 .cart-item{
     position: absolute;

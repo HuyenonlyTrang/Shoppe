@@ -159,7 +159,7 @@ fetch('http://localhost:3001/pay')
             localStorage.setItem('pay', JSON.stringify(arr));
             sum();
             // Chuyển hướng sang trang 'pay.html'
-           window.location.href = './pay.html'
+            window.location.href = './pay.html'
         });
         
         

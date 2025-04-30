@@ -26,6 +26,7 @@ const minus = $('.minus')
 const push = $('.push')
 const sum = $('.sum')
 const cart = $('.cart')
+const pay = $('.pay')
 const store_avatar = $('.store_avatar')
 const store_nom = $('.store_nom')
 const store_title = $('.store_title')
@@ -298,41 +299,40 @@ Promise.all([
     liststart.appendChild(i)
   }
 
-  
-
-
-  
-  PayLoad.forEach(item => {
-    item.addEventListener('click', () => {
-      if (!arrPushPay.length || !arrPushPay[0].name || !arrPushPay[0].price || !arrPushPay[0].image || !arrPushPay[0].size) {
-        alert('Vui lòng điền đầy đủ thông tin sản phẩm!');
-        return;
-      }  
-      fetch(`${SERVER}/add-pay`, {
-        method: 'POST',
-        headers: {
-          'Content-Type': 'application/json'
-        },
-        body: JSON.stringify(arrPushPay[0])
-      })
-      .then(res => res.text())
-      .then(data => {
-        if(item.classList.contains('cart')){
-          document.querySelector('.cart-item').style.display = 'block';
-          setTimeout(() =>{
-            document.querySelector('.cart-item').style.display = 'none';
-          }, 3000)
-        }   
-        if(cartlist){
-
-          window.location.href = './cart.html';  
-        }
-        
-        console.log(data)
-      })
-  
+    pay.addEventListener('click', () => {
+    if (!arrPushPay.length || !arrPushPay[0].name || !arrPushPay[0].price || !arrPushPay[0].image || !arrPushPay[0].size) {
+            alert('Vui lòng điền đầy đủ thông tin sản phẩm!');
+            return;
+          }  
+    fetch(`${SERVER}/add-pay`, {
+      method: 'POST',
+      headers: {
+        'Content-Type': 'application/json'
+      },
+      body: JSON.stringify(arrPushPay[0])
     })
-  
-  
+    .then(res => res.text())
+    .then(data => {
+      window.location.href = './cart.html'
+    })
   })
-  cart.innerHTML += `<div class='cart-item'>Đã thêm vào giỏ hàng thành công</div>`
+  cart.addEventListener('click', () => {
+    if (!arrPushPay.length || !arrPushPay[0].name || !arrPushPay[0].price || !arrPushPay[0].image || !arrPushPay[0].size) {
+      alert('Vui lòng điền đầy đủ thông tin sản phẩm!');
+      return;
+    }  
+    fetch(`${SERVER}/add-pay`, {
+    method: 'POST',
+    headers: {
+      'Content-Type': 'application/json'
+    },
+    body: JSON.stringify(arrPushPay[0])
+    })
+    .then(res => res.text())
+    .then(data => {
+      document.querySelector('.cart-item').style.display = 'block';
+      setTimeout(() =>{
+           document.querySelector('.cart-item').style.display = 'none';
+      }, 3000)           
+    })
+  })
